@@ -18,10 +18,10 @@ You need to install:
 ### Run commands
 - `docker swarm init`
 - `docker build -t gif-converter-backend ./backend`
-- `docker build -t gif-converter-worker ./worker`
+- `docker build -t gif-converter-worker ./workers`
 - `docker stack deploy -c docker-compose.yml gif-converter`
 
-#### For running frontent part run:
+#### For running frontend part run:
 - `cd frontend`
 - `npm i`
 - `ng serve`
