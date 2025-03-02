@@ -16,6 +16,7 @@ You need to install:
 - Open a terminal in it
 
 ### Run commands
+- `docker swarm init`
 - `docker build -t gif-converter-backend ./backend`
 - `docker build -t gif-converter-worker ./worker`
 - `docker stack deploy -c docker-compose.yml gif-converter`
