@@ -1,26 +1,22 @@
-# 🎥 GIF Converter Service
+# MP4 to GIF converter service
 
-A scalable and reliable web service that converts **MP4 videos** to **GIF animations** using **Node.js, Redis, and FFmpeg**.  
-Built for **high-load environments** with **Docker Swarm**.
+## Features
+- Upload **MP4 (max 1024x768, 10 sec)**
+- Convert **MP4 to GIF (-1:400, 5 FPS)**
 
----
+## Getting Started
 
-## 🚀 Features
-- ✅ Upload **MP4 (max 1024x768, 10 sec)**
-- ✅ Convert **MP4 to GIF (-1:400, 5 FPS)**
-- ✅ Scalable **multi-worker architecture**
-- ✅ Queue-based processing (**Redis + BullMQ**)
-- ✅ Fully containerized with **Docker Swarm**
-- ✅ Supports **multi-user concurrent uploads**
-- ✅ Built-in **processing timeout (5 sec - 5 min)**
-- ✅ Reverse proxy support (**NGINX**)
-- ✅ Production-ready **HTTPS & auto-deploy**
+You need to install:
+- Node.js (**`node -v`** to check if it is installed)
+- Angular CLI (**`ng version`** to check if it is installed)
+- Docker & Docker Swarm (**`docker --version`** to check if it is installed)
 
----
+### Run commands
+- `docker build -t gif-converter-backend ./backend`
+- `docker build -t gif-converter-worker ./worker`
+- `docker stack deploy -c docker-compose.yml gif-converter`
 
-## 🛠️ Development Setup
-
-### 1️⃣ Install dependencies
-Ensure you have **Docker & Docker Swarm** installed:
-```bash
-docker --version  # Check if Docker is installed
+#### For running frontent part run:
+- `cd frontend`
+- `npm i`
+- `ng serve`

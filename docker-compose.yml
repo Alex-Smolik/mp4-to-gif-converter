@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:alpine
+    container_name: gif_redis
+    ports:
+      - "6379:6379"
+
+  backend:
+    image: gif-converter-backend  # Use the built image
+    container_name: gif_backend
+    ports:
+      - "3000:3000"
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+    volumes:
+      - ./backend/uploads:/app/uploads
+
+  worker:
+    image: gif-converter-worker  # Use the built image
+    deploy:
+      replicas: 5 # Allow up to 5 workers
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+    volumes:
+      - ./backend/uploads:/app/uploads
