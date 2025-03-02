@@ -11,6 +11,8 @@ You need to install:
 - Angular CLI (**`ng version`** to check if it is installed)
 - Docker & Docker Swarm (**`docker --version`** to check if it is installed)
 
+## Download the project and open a terminal in it
+
 ### Run commands
 - `docker build -t gif-converter-backend ./backend`
 - `docker build -t gif-converter-worker ./worker`
