@@ -1,0 +1,14 @@
+<div class="upload-container">
+  <h2>MP4 to GIF Converter</h2>
+
+  <label class="file-label" for="fileInput">Choose MP4 File</label>
+  <input type="file" id="fileInput" (change)="onFileSelected($event)" accept="video/mp4">
+  
+  <button (click)="uploadFile()" [disabled]="!selectedFile || gifUrl">Upload & Convert</button>
+
+  <p *ngIf="statusMessage">{{ statusMessage }}</p>
+
+  <img *ngIf="gifUrl" [src]="gifUrl" alt="Converted GIF">
+
+  <button *ngIf="gifUrl" (click)="downloadGif()">Download GIF</button>
+</div>
