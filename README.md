@@ -9,7 +9,7 @@
 You need to install:
 - Node.js (**`node -v`** to check if it is installed)
 - Angular CLI (**`ng version`** to check if it is installed)
-- Docker & Docker Swarm (**`docker --version`** to check if it is installed)
+- Docker (**`docker --version`** to check if it is installed)
 
 ### Project installation
 - Download the project
